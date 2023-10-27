@@ -13,45 +13,6 @@ const openAi = new OpenAI({
   apiKey: process.env.CreativeVerseAPIKey,
 });
 
-let systemContext = "";
-let userContext = "";
-
-// const contentCraft = async (req, res) => {
-//   try {
-//     const messages = [
-//       {
-//         role: "system",
-//         content: systemContext,
-//       },
-//       {
-//         role: "user",
-//         content: userContext,
-//       },
-//     ];
-//     const response = await openAi.chat.completions.create({
-//       model: "gpt-3.5-turbo",
-//       messages: messages,
-//       functions: functions,
-//       max_tokens: 200,
-//       temperature: 0.7,
-//       n: 1,
-//     });
-//     const output = response.choices[0].message.content;
-//     console.log("out", response);
-//     return output;
-//     // return res.send({ output });
-//   } catch (error) {
-//     console.log(error.message);
-//     return null;
-//   }
-// };
-// contentCraft();
-// app.post("/", async (req, res) => {
-//   const userInput = req.body.userInput;
-//   const output = await contentCraft(userInput);
-//   res.send({ output });
-// });
-
 function inputForAISwitchCase(userInput, selectedOption) {
   let systemContext = "";
   let userContext = userInput;
