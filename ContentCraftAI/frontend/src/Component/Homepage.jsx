@@ -5,6 +5,9 @@ const Homepage = () => {
   const [selectedOption, setSelectedOption] = useState("text_generation");
   const [output, setOutput] = useState("");
 
+  let hostUrl = "http://localhost:8080"; // for localhost
+  // let hostUrl = ""; //this one, if backend is deployed.
+
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -16,7 +19,7 @@ const Homepage = () => {
   const handleSubmit = async () => {
     if (inputValue.trim() !== "") {
       try {
-        const response = await fetch("http://localhost:8080", {
+        const response = await fetch(`${hostUrl}/get-output`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -83,11 +86,19 @@ const Homepage = () => {
           </section>
 
           <section className="w-full border-2 border-blue-200 shadow-xl rounded-lg">
-            <div className="bg-gray-100 text-xl h-[30rem] w-full flex flex-col justify-center items-center">
+            <div className="text-xl h-[30rem] w-full flex flex-col justify-center items-center p-16">
               {output ? (
-                <div className="text-lg">{output}</div>
+                <textarea
+                  className="text-lg border-2 rounded-lg h-full w-full p-4"
+                  value={output}
+                  readOnly
+                ></textarea>
               ) : (
-                <div className="text-lg">Let's generate the output first</div>
+                <textarea
+                  className="text-lg border-2 rounded-lg h-full w-full p-4"
+                  value={"Please make a request first. :)"}
+                  readOnly
+                ></textarea>
               )}
             </div>
           </section>

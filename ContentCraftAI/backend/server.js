@@ -41,7 +41,7 @@ function inputForAISwitchCase(userInput, selectedOption) {
   return { systemContext, userContext };
 }
 
-app.post("/", async (req, res) => {
+app.post("/get-output", async (req, res) => {
   try {
     const userInput = req.body.userInput;
     const selectedOption = req.body.selectedOption;
