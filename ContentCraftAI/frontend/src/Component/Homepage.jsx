@@ -5,8 +5,8 @@ const Homepage = () => {
   const [selectedOption, setSelectedOption] = useState("text_generation");
   const [output, setOutput] = useState("");
 
-  let hostUrl = "http://localhost:8080"; // for localhost
-  // let hostUrl = ""; //this one, if backend is deployed.
+  // let hostUrl = "http://localhost:8080"; // for localhost
+  let hostUrl = "https://backend-second-task.onrender.com"; //this one, if backend is deployed.
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
