@@ -3,7 +3,7 @@ const {
   createReview,
   deleteReview,
   getReviewsForProduct,
-} = require("../controller/reviewCtrl");
+} = require("../controllers/Reviews");
 const router = express.Router();
 
 // Create a review for a product

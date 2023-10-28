@@ -14,7 +14,6 @@ const reviewSchema = new mongoose.Schema(
     uDate: { type: Date, default: Date.now },
   },
   {
-    timestamps: true,
     versionKey: false,
   }
 );

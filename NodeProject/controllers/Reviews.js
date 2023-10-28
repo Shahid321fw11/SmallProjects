@@ -6,18 +6,14 @@ const createReview = async (req, res) => {
   try {
     const productId = req.params.productId;
     const { userId, description } = req.body;
-
     const product = await Product.findById(productId).exec();
-
     if (!product) {
       return res.status(404).json({ error: "Product not found." });
     }
-
     const review = new Review({ userId, description });
     const savedReview = await review.save();
     product.reviews.push(savedReview);
     await product.save();
-
     res.status(201).json(savedReview);
   } catch (error) {
     res.status(400).json({ error: "Failed to create the review." });

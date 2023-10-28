@@ -16,7 +16,7 @@ connection();
 app.use("/products", productRouter);
 
 app.get("/", async (req, res) => {
-  res.send("Server is Running");
+  res.send("Server is Running :)");
 });
 
 app.listen(PORT, () => {
