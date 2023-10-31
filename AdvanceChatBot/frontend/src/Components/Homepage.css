@@ -1,0 +1,40 @@
+/* Add these CSS classes to your stylesheet */
+
+.user-message {
+    background-color: #cce6ff;
+    /* Blue background for user messages */
+    margin-right: 8px;
+    /* Add margin to the right of the message */
+}
+
+.bot-message {
+    background-color: #e6ffe6;
+    /* Green background for bot messages */
+    margin-right: 8px;
+    /* margin: 8px; */
+    /* Add margin to the left of the message */
+}
+
+.message {
+    padding: 4px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.message p {
+    margin: 0;
+    display: flex;
+}
+
+.message-icon {
+    font-size: 18px;
+    margin-right: 8px;
+    margin-top : 4px
+}
+
+.message-content {
+    flex: 1;
+    /* Take up remaining space in the message */
+}
+
+/* Adjust the colors and margins to your liking */
